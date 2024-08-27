@@ -20,8 +20,8 @@ print(f'{fin1 - start1} - линейный')
 
 # Многопроцессный
 if __name__ == '__main__':
+    start2 = datetime.datetime.now()
     with multiprocessing.Pool(processes = 6) as pool:
-        start2 = datetime.datetime.now()
         pool.map(read_info,filenames)
     fin2 = datetime.datetime.now()
     print(f'{fin2 - start2} - многопроцессный')
